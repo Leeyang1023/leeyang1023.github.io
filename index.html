@@ -431,8 +431,8 @@
             
               
                 
-                <a class="post-title-link" href="/浅谈clearfix原理/" itemprop="url">
-                  浅谈clearfix原理
+                <a class="post-title-link" href="/task-7-ask/" itemprop="url">
+                  jrg任务7-HTML3
                 </a>
               
             
@@ -445,127 +445,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-07T11:24:05+08:00" content="2016-04-07">
-              2016-04-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">-前端</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/浅谈clearfix原理/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="/浅谈clearfix原理/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="浅谈-clearfix的原理"><a href="#浅谈-clearfix的原理" class="headerlink" title="浅谈.clearfix的原理"></a>浅谈.clearfix的原理</h3><p>.clearfix的作用是清除浮动，写之前呢我们先介绍下之前最常用的另一种清除浮动的方法,通过对比来介绍.clearfix的原理。</p>
-<p>之前我们最常用清除浮动的方法是这个样子：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.clear&#123;clear:both;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>配合<a href="http://js.jirengu.com/gagemetumu/2/edit" target="_blank" rel="external">DEMO</a>更易理解<br>我们拿导航栏为例，当li元素浮动时，ul的边框无法包裹li。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">li&#123;float: left;border: 1px solid green;&#125;</span><br><span class="line">ul&#123;border: 1px solid red;&#125;</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://ww3.sinaimg.cn/large/bd3d5249gw1f2nxyyqn9sj20cs039q33.jpg" alt=""><br>这是因为<strong>浮动会导致元素脱离文档流</strong>，也就是导致ul的边框无法包裹li的原因。</p>
-<p>然后我们通过在li后面添加一个空的class为”testclear”的div，在样式里面我们把它清除浮动，这样这个div前面或者后面的li就会受到<br>清除浮动的影响，包裹在ul的边框内部，达到我们想要的效果。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">title</span>&gt;</span>JS Bin<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span>&gt;</span>导航1<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span>&gt;</span>导航2<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span>&gt;</span>导航3<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span>&gt;</span>导航4<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span>&gt;</span>导航5<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"testclear"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/*CSS reset */</span><br><span class="line">*&#123;margin:0;padding:0;&#125;</span><br><span class="line">ul&#123;list-style: none;&#125;</span><br><span class="line"></span><br><span class="line">/*样式*/</span><br><span class="line">.testclear&#123;clear:both;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">li&#123;float: left;border: 1px solid green;&#125;</span><br><span class="line">ul&#123;border: 1px solid red;&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="http://ww3.sinaimg.cn/large/bd3d5249gw1f2nybft9hlj20co03pmxb.jpg" alt=""></p>
-<hr>
-<h4 id="clearfix"><a href="#clearfix" class="headerlink" title="clearfix"></a>clearfix</h4><p>通过刚才我们得知的<strong>浮动会导致元素脱离文档流</strong>，就不难理解clearfix。<br><a href="http://js.jirengu.com/celibafama/2/edit" target="_blank" rel="external">DEMO</a><br>上面的原理是通过一个空的div来清除浮动，但是这样做会导致一些问题。就是每次清除浮动的时候都需要增加一个空标签来使用，增加了页面<br>无用标签，不利于页面的优化。<br>clearfix的好处就是不需要增加空标签，直接在有浮动的外层加上这个样式就可以了。<br>我们为ul添加clearfix这个类，下面我们只需要操作这个类就可以了。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after&#123;</span><br><span class="line">  content: '';/*内容为空*/</span><br><span class="line">  display: block;/*块级元素*/</span><br><span class="line">  clear: both;/*清除浮动*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>通过代码我们不难理解，clearfix是通过创建一个内容为空的块级元素并清除前后浮动来达到我们需要的效果。原理上和上面的方法基本类似，<br>我们里面的”content + display”可以看做成上面方法中的div一样。但是这样做的好处就是避免了我们上述讲到的问题，使得代码看起来更加优雅和简介。也方便其他地方调用来清除浮动。</p>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/task-6-1/" itemprop="url">
-                  jrg任务6-HTML3
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-01T10:21:02+08:00" content="2016-04-01">
-              2016-04-01
+            <time itemprop="dateCreated" datetime="2016-04-12T16:23:33+08:00" content="2016-04-12">
+              2016-04-12
             </time>
           </span>
 
@@ -594,8 +475,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/task-6-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="/task-6-1/" itemprop="commentsCount"></span>
+                <a href="/task-7-ask/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="/task-7-ask/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -618,362 +499,25 @@
       
         
           
-            <h1 id="问答"><a href="#问答" class="headerlink" title="问答"></a>问答</h1><h3 id="ling-height有什么作用"><a href="#ling-height有什么作用" class="headerlink" title="ling-height有什么作用"></a>ling-height有什么作用</h3><p>答：line-height属性设置行间的距离（行高）。<br>1.对于块级元素，CSS属性line-height指定了元素内部行块的<strong>最小</strong>高度。<br>2.对于非替代行内元素，line-height用于计算<strong>行块</strong>的高度。<br>3.对于替代行内元素，如button或其他input元素，line-height没有影响。</p>
-<p>参考：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/line-height" target="_blank" rel="external">MDN line-height</a></p>
-<h3 id="如何去查CSS熟悉的兼容性？比如inline-block哪些浏览器支持？"><a href="#如何去查CSS熟悉的兼容性？比如inline-block哪些浏览器支持？" class="headerlink" title="如何去查CSS熟悉的兼容性？比如inline-block哪些浏览器支持？"></a>如何去查CSS熟悉的兼容性？比如inline-block哪些浏览器支持？</h3><p>答：1.<a href="http://caniuse.com/" target="_blank" rel="external">caniuse.com</a><br>   <img src="http://ww4.sinaimg.cn/large/bd3d5249gw1f2h0bu09w0j211p0jik14.jpg" alt=""><br>   2.inline-block所有主流浏览器都支持<br>   <img src="http://ww2.sinaimg.cn/large/bd3d5249gw1f2h0rd89bsj211c0jgagg.jpg" alt=""></p>
-<h3 id="a标签的href-title-target是什么？title和alt有什么区别？如何新窗口打开链接？"><a href="#a标签的href-title-target是什么？title和alt有什么区别？如何新窗口打开链接？" class="headerlink" title="a标签的href,title,target是什么？title和alt有什么区别？如何新窗口打开链接？"></a>a标签的href,title,target是什么？title和alt有什么区别？如何新窗口打开链接？</h3><p>答：1.<br><img src="http://ww3.sinaimg.cn/large/bd3d5249gw1f2h6g5a1kjj20h504cmy1.jpg" alt=""></p>
-<p>2.使用<strong>title</strong>属性时，可以让鼠标悬停在超链接上时，显示该超链接的文字注释。<br>使用<strong>alt</strong>属性时，用来为元素提供额外的说明。<br><strong>PS</strong>:alt是html标签的属性，而title既是html标签，又是html属性。<br><strong>新窗口打开连接</strong>:target=_blank</p>
-<h3 id="display-none和visibility-hidden有什么作用？有什么区别？"><a href="#display-none和visibility-hidden有什么作用？有什么区别？" class="headerlink" title="display:none和visibility:hidden有什么作用？有什么区别？"></a>display:none和visibility:hidden有什么作用？有什么区别？</h3><p>答：<br>1.当display属性值为none的时候，此元素不会被显示；当visibility属性值为hidden的时候，元素也为不可见的。<br>2.visibility:hidden属性会使对象不可见，<strong>但该对象在网页所占的空间没有改变</strong>（看不见但摸得到），等于留出一块空白区域；<br>display:none时，属性会使这个对象彻底消失（看不见也摸不到）。<br>参考 <a href="http://bbs.blueidea.com/thread-2942695-1-1.html" target="_blank" rel="external">display:none和visibility:hidden的区别！</a></p>
-<hr>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>1.写个div，边框为1px, #ccc, 宽度为200px, 高度为80px, 内有一行文字这里是饥人谷，文字字体大小14px, 颜色#f0f, 文字在div里垂直水平居中<br>代码展示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">		<span class="tag">div</span><span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#ccc</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">80px</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">14px</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#f0f</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">80px</span></span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line"></span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>这里是饥人谷<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>2.对于如下html代码<br>  1.给box加个边框 1px, #ccc<br>  2.给header设置高度40px, 左对齐，左内边距10px, 文字16px, 颜色#f00,下边框#ccc 1px。<br>  3.给content 设置高度100px,内部 a链接去掉下划线，颜色 blue, 鼠标放置上去后颜色变为 red<br>  4.给footer设置高度50px，内部 btn设置 边框1px #ccc, 圆角3px, 上下内边距4px,左右内边距3px，显示为inline-block, footer哪居中显示;</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"box"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"header"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">h3</span>&gt;</span>我是标题<span class="tag">&lt;/<span class="title">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">"close"</span> <span class="attribute">title</span>=<span class="value">"关闭"</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>X<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"content"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">h3</span>&gt;</span>欢迎来到  <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://jirengu.com"</span>&gt;</span>饥人谷<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">h3</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">p</span>&gt;</span> 在这个大家庭你能快乐的学到更多前端技能<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"footer"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">"btn btn-cancel"</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>取消<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">"btn btn-confirm"</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>确认<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>代码展示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">		<span class="class">.box</span><span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#ccc</span></span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		<span class="class">.header</span><span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">40px</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">text-align</span>:<span class="value"> left</span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">padding-left</span>:<span class="value"> <span class="number">10px</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">16px</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#f00</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">border-bottom</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#ccc</span></span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		<span class="class">.content</span><span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		<span class="class">.content</span> <span class="tag">a</span><span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">text-decoration</span>:<span class="value"> none</span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">color</span>:<span class="value"> blue</span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		<span class="class">.content</span> <span class="tag">a</span><span class="pseudo">:hover</span><span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">color</span>:<span class="value"> red</span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		<span class="class">.footer</span><span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">50px</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		<span class="class">.footer</span> <span class="class">.btn</span><span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#ccc</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">3px</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">4px</span> <span class="number">3px</span></span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">	  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"header"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">h3</span>&gt;</span>我是标题<span class="tag">&lt;/<span class="title">h3</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">"close"</span> <span class="attribute">title</span>=<span class="value">"关闭"</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>X<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"content"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="title">h3</span>&gt;</span>欢迎来到  <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://jirengu.com"</span>&gt;</span>饥人谷<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">h3</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="title">p</span>&gt;</span> 在这个大家庭你能快乐的学到更多前端技能<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"footer"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">"btn btn-cancel"</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>取消<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">"btn btn-confirm"</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>确认<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>3.写一个如下表格<br><img src="http://ww3.sinaimg.cn/large/bd3d5249gw1f2hayxrseij21c608kjry.jpg" alt=""><br>代码展示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">	<span class="id">#table</span><span class="rules">&#123;</span><br><span class="line">		<span class="rule"><span class="attribute">font-family</span>:<span class="value"> Arial,<span class="string">"Microsoft YaHei"</span></span></span>;</span><br><span class="line">		<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">800px</span></span></span>;</span><br><span class="line">		<span class="rule"><span class="attribute">border-collapse</span>:<span class="value"> collapse</span></span>;<span class="comment">/*border-collapse设置表格边框是否被合并为一个单一边框，collapse时合并*/</span></span><br><span class="line">		<span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">	&#125;</span></span><br><span class="line">	<span class="id">#table</span> <span class="tag">td</span>,<span class="id">#table</span> <span class="tag">th</span><span class="rules">&#123;</span><br><span class="line">		<span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#ccc</span></span></span>;</span><br><span class="line">		<span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">45px</span></span></span>;</span><br><span class="line">	&#125;</span></span><br><span class="line">	<span class="id">#table</span> <span class="tag">th</span><span class="rules">&#123;</span><br><span class="line">		<span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="function">rgb</span>(<span class="number">0</span>,<span class="number">172</span>,<span class="number">166</span>)</span></span>;</span><br><span class="line">	&#125;</span></span><br><span class="line">	<span class="class">.alt1</span><span class="rules">&#123;</span><br><span class="line">		<span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="function">rgb</span>(<span class="number">248</span>,<span class="number">248</span>,<span class="number">247</span>)</span></span>;</span><br><span class="line">	&#125;</span></span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">table</span> <span class="attribute">id</span>=<span class="value">"table"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">tr</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="title">th</span>&gt;</span>姓名<span class="tag">&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="title">th</span>&gt;</span>性别<span class="tag">&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">tr</span> <span class="attribute">class</span>=<span class="value">"alt1"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="title">td</span>&gt;</span>小明<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="title">td</span>&gt;</span>男<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">tr</span> <span class="attribute">class</span>=<span class="value">"alt2"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="title">td</span>&gt;</span>小花<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="title">td</span>&gt;</span>女<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>4.下面的代码有什么作用，举例说明<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.center&#123;</span><br><span class="line">    display: table-cell;// block; inline; inline-blick; none; table-cell; </span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">    text-align: center;</span><br><span class="line">            background-color: #ccc;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>代码展示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">    <span class="class">.center</span><span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">display</span>:<span class="value"> table-cell</span></span>;<span class="comment">/*元素会作为一个表格单元格显示*/</span> block;<span class="comment">/*元素显示为快级元素，元素前后会带有换行符*/</span> inline;<span class="comment">/*默认，元素会显示为内联元素，前后没有换行符*/</span> inline-block;<span class="comment">/*行内块元素*/</span> none;<span class="comment">/*此元素不会被显示*/</span></span><br><span class="line">        <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;<span class="comment">/*宽度为200像素*/</span></span><br><span class="line">        <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">200px</span></span></span>;<span class="comment">/*高度为200像素*/</span></span><br><span class="line">        <span class="rule"><span class="attribute">vertical-align</span>:<span class="value"> middle</span></span>;<span class="comment">/*vertical-align设置元素垂直对齐方式，middle时把此元素放置在父元素的中部*/</span></span><br><span class="line">        <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;<span class="comment">/*文本对齐方式为居中*/</span></span><br><span class="line">                <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#ccc</span></span></span>;<span class="comment">/*背景颜色为#ccc*/</span></span><br><span class="line">    &#125;</span></span><br><span class="line">    <span class="class">.test</span><span class="rules">&#123;</span><br><span class="line">    	<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">800px</span></span></span>;</span><br><span class="line">    	<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">800px</span></span></span>;</span><br><span class="line">    	<span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>;</span><br><span class="line">    &#125;</span></span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"test"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"center"</span>&gt;</span>欢迎来到饥人谷学习<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/饥人谷第六课作业代码展示/" itemprop="url">
-                  饥人谷第六课作业代码展示
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-31T14:47:29+08:00" content="2016-03-31">
-              2016-03-31
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/前端作业代码/" itemprop="url" rel="index">
-                    <span itemprop="name">-前端作业代码</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/饥人谷第六课作业代码展示/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="/饥人谷第六课作业代码展示/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>####作业要求：至少使用以下选择器<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.class</span><br><span class="line">#id </span><br><span class="line">*</span><br><span class="line">element</span><br><span class="line">element,element</span><br><span class="line">element element</span><br><span class="line"></span><br><span class="line">element&gt;element </span><br><span class="line">element+element </span><br><span class="line">[attribute] </span><br><span class="line">[attribute=value]   </span><br><span class="line">[attribute~=value]</span><br><span class="line">[attribute|=value]</span><br><span class="line">element1~element2</span><br></pre></td></tr></table></figure></p>
-<hr>
-<p>代码展示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">title</span>&gt;</span>NO.6_homework_css selector<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">		<span class="class">.class1</span><span class="rules">&#123;<span class="rule"><span class="attribute">color</span>:<span class="value"> red</span></span>;&#125;</span><span class="comment">/*class选择器*/</span></span><br><span class="line">		<span class="id">#id1</span><span class="rules">&#123;<span class="rule"><span class="attribute">color</span>:<span class="value"> blue</span></span>;&#125;</span><span class="comment">/*id选择器*/</span></span><br><span class="line">		*<span class="rules">&#123;<span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="function">rgb</span>(<span class="number">239</span>,<span class="number">239</span>,<span class="number">239</span>)</span></span>;&#125;</span><span class="comment">/*通配符选择器*/</span></span><br><span class="line">		<span class="tag">p</span><span class="rules">&#123;<span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">18px</span></span></span>;&#125;</span><span class="comment">/*element选择器*/</span></span><br><span class="line">		<span class="tag">h1</span>,<span class="tag">p</span><span class="rules">&#123;<span class="rule"><span class="attribute">font-family</span>:<span class="value"> <span class="string">"Microsoft YaHei"</span></span></span>;&#125;</span><span class="comment">/*'element,element'元素选择器，设置所有&lt;h1&gt;和所有&lt;p&gt;元素的样式*/</span></span><br><span class="line">		<span class="tag">div</span> <span class="tag">p</span><span class="rules">&#123;<span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">28px</span></span></span>;&#125;</span><span class="comment">/*'element element'选择器*/</span></span><br><span class="line">		<span class="tag">div</span>&gt;<span class="tag">span</span><span class="rules">&#123;<span class="rule"><span class="attribute">color</span>:<span class="value">green</span></span>;&#125;</span><span class="comment">/*element&gt;element选择器*/</span></span><br><span class="line">		<span class="tag">ul</span>+<span class="tag">p</span><span class="rules">&#123;<span class="rule"><span class="attribute">color</span>:<span class="value"> purple</span></span>;&#125;</span><span class="comment">/*'element+element选择器,用于选取第一个制定元素之后（不是内部）紧跟的元素'*/</span></span><br><span class="line">		<span class="tag">a</span><span class="attr_selector">[target]</span><span class="rules">&#123;<span class="rule"><span class="attribute">background-color</span>:<span class="value"> yellow</span></span>;&#125;</span><span class="comment">/*[attribute]选择器，用于选取带有制定属性的元素*/</span></span><br><span class="line">		<span class="tag">p</span><span class="attr_selector">[align=center]</span><span class="rules">&#123;<span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">30px</span></span></span>; <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#FFA500</span></span></span>;&#125;</span><span class="comment">/*[attribute=value]选择器，用于选取带有制定属性和值得元素*/</span></span><br><span class="line">		<span class="tag">a</span><span class="attr_selector">[target~=_self]</span><span class="rules">&#123;<span class="rule"><span class="attribute">background-color</span>:<span class="value"> red</span></span>;&#125;</span><span class="comment">/*[attribute~=value]选择器,用于选择属性值中包含指定词汇的元素*/</span></span><br><span class="line">		<span class="tag">p</span><span class="attr_selector">[lang|=en]</span><span class="rules">&#123;<span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#A0522D</span></span></span>;&#125;</span><span class="comment">/*[attribute|=value]选择器，用于选取带有以指定值开头的属性值的元素*/</span></span><br><span class="line">		<span class="tag">p</span>~<span class="tag">ul</span><span class="rules">&#123;<span class="rule"><span class="attribute">text-decoration</span>:<span class="value"> underline</span></span>;&#125;</span><span class="comment">/*element1~element2选择器，为所有相同父元素中位于p元素之后的所有ul设置下划线*/</span></span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"class1"</span>&gt;</span>这是class选择器<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">h3</span> <span class="attribute">id</span>=<span class="value">"id1"</span>&gt;</span>这是ID选择器<span class="tag">&lt;/<span class="title">h3</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">h1</span>&gt;</span><span class="tag">&lt;<span class="title">p</span>&gt;</span>这是element,element选择器<span class="tag">&lt;/<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">p</span>&gt;</span>这是element&amp;nbspelement选择器<span class="tag">&lt;/<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>这是element&gt;element选择器<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>test1<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://leeyang.me"</span>&gt;</span>MyBlog<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://leeyang.me"</span> <span class="attribute">target</span>=<span class="value">"_blank"</span>&gt;</span>这是[attribute]选择器<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">p</span> <span class="attribute">align</span>=<span class="value">"center"</span>&gt;</span>这是[attriblue=value]选择器<span class="tag">&lt;/<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://leeyang.me"</span> <span class="attribute">target</span>=<span class="value">"_self"</span>&gt;</span>这是[attribute~=value]选择器<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">p</span> <span class="attribute">lang</span>=<span class="value">"us"</span>&gt;</span>Hi!<span class="tag">&lt;/<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">p</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span>这是[attribute|=value]选择器<span class="tag">&lt;/<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">p</span>&gt;</span>这是element+element选择器<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/饥人谷第五课作业代码展示/" itemprop="url">
-                  饥人谷第五课作业代码展示
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-28T16:44:12+08:00" content="2016-03-28">
-              2016-03-28
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/前端作业代码/" itemprop="url" rel="index">
-                    <span itemprop="name">-前端作业代码</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/饥人谷第五课作业代码展示/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="/饥人谷第五课作业代码展示/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="作业要求：至少使用以下标签"><a href="#作业要求：至少使用以下标签" class="headerlink" title="作业要求：至少使用以下标签"></a>作业要求：至少使用以下标签</h4><p>1.h1<br>2.h2<br>3.ul<br>4.li<br>5.ol<br>6.dl<br>7.p<br>8.strong</p>
-<hr>
-<p>代码展示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"author"</span> <span class="attribute">content</span>=<span class="value">"leeyang"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">title</span>&gt;</span>个人介绍<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">		<span class="tag">p</span><span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">text-indent</span>:<span class="value"> <span class="number">2em</span></span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		<span class="tag">body</span><span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">rgb</span>(<span class="number">239</span>,<span class="number">239</span>,<span class="number">239</span>)</span></span>;</span><br><span class="line">			<span class="rule"><span class="attribute">font-family</span>:<span class="value"> <span class="string">"Microsoft YaHei"</span> ! important</span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">		<span class="tag">a</span><span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">text-decoration</span>:<span class="value"> none</span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line"></span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">h1</span>&gt;</span>个人介绍<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="title">h2</span>&gt;</span>目前情况<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">p</span>&gt;</span>大家好，我是<span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://leeyang.me"</span> <span class="attribute">target</span>=<span class="value">"_blank"</span>&gt;</span>李洋<span class="tag">&lt;/<span class="title">a</span>&gt;</span>，来自河南郑州。目前在魔都工作，是一名<span class="tag">&lt;<span class="title">strong</span>&gt;</span>运维工程师<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>。因出于对未来的规划和对前端的兴趣，想转行做一名前端工程师，所以来到饥人谷进行学习。<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="title">h2</span>&gt;</span>学习经历<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">ol</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span>大学学习的是计算机信息专业技术，可惜学艺不精^_^<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span>2014年考取RHCE认证<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span>目前在饥人谷学习前端开发<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">ol</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="title">h2</span>&gt;</span>工作经历<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span>在校实习期间在海马汽车郑州公司做一名网络管理员，负责管理办公室及机房网络<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span>毕业后来到上海，在某医疗集团运营部任职运维工程师，负责集团旗下所有医院web服务器以及内部测试与内部系统等服务器运维工作<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span>去年年底至今，在某集团旗下科技公司任职运维工程师，负责其他产业公司以及内部测试等服务器运维工作<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="title">h2</span>&gt;</span>学习前端的原因<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">dt</span>&gt;</span>对未来的规划<span class="tag">&lt;/<span class="title">dt</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">dd</span>&gt;</span>因为打算未来回家工作，前端的就业前景可能会比运维要好一点，需求量较大。<span class="tag">&lt;/<span class="title">dd</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">dt</span>&gt;</span>兴趣<span class="tag">&lt;/<span class="title">dt</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">dd</span>&gt;</span>看到前端的同事能做出各种酷炫的效果，以及对coding的渴望。<span class="tag">&lt;/<span class="title">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/你好，2016/" itemprop="url">
-                  你好，2016
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-16T14:53:25+08:00" content="2016-02-16">
-              2016-02-16
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">-随笔</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/你好，2016/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="/你好，2016/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>“生活不止眼前的苟且，还有诗和远方的田野。你赤手空拳来到人世间，为找到那片海不顾一切。”——《生活不止眼前的苟且》</p>
-</blockquote>
-<p><img src="http://ww4.sinaimg.cn/large/bd3d5249gw1f11apnu05rj21ao0ylwxr.jpg" alt=""></p>
-<p>伴随着没有鞭炮声的大年夜和无聊的春晚，今年春节的假期也如往年一样平淡的度过。我也回到魔都，开始一年新的“征程”。</p>
-<p>回来上班后趁着调整状态的期间，抓紧就把这个小小的写字的地方搭建起来，完成这个迟迟未完成的“计划”（说到这里我也感觉我也是个拖延症患者w(ﾟДﾟ)w）。在这里要感谢利国童鞋，在搭建的过程中给予了我很大的支持，改天一定献上一杯关东煮慰劳一下。</p>
-<p>不过今年新年伊始对我来说最大的“福音”就是我的母亲随我来到了魔都，照顾下我的衣食起居（其实还是主要是食啦~，吃了快四年的外卖实在是够了！）。在这里要非常感谢我的老妈，满满的母爱。</p>
-<p>很久之前我就想搞个写字的地方了，但出于“种种原因”（你懂得~）一直没有落实。不过新年新气象，也为了一年有个好的开始，把这个地方搭建起来了。以后尽量定时或者不定时的写点东西，有技术上方面的也有随笔，看心情写吧。积少成多，水滴石穿。只为让自己养成一个好习惯，也让以后回想起来有个回忆的地方吧。就像女生自拍一样，希望能回首一下往昔时光。而不喜拍照的我，就用这些平淡无奇的文字来记录我经历过的岁月吧。</p>
-<p>先写这么多吧，主要是想先熟悉下<em>Markdown</em>的语法，来日方长呢是吧。最后祝愿我的家人朋友能够在新的一年中健康、平安的度过。</p>
+            <h3 id="问答"><a href="#问答" class="headerlink" title="问答"></a>问答</h3><h4 id="有序列表、无序列表、自定义列表如何使用？写个简单的例子。三者在语义上有什么区别？使用场景是什么？-能否嵌套？"><a href="#有序列表、无序列表、自定义列表如何使用？写个简单的例子。三者在语义上有什么区别？使用场景是什么？-能否嵌套？" class="headerlink" title="有序列表、无序列表、自定义列表如何使用？写个简单的例子。三者在语义上有什么区别？使用场景是什么？ 能否嵌套？"></a>有序列表、无序列表、自定义列表如何使用？写个简单的例子。三者在语义上有什么区别？使用场景是什么？ 能否嵌套？</h4><p>有序列表<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>apple<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>orange<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ol</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>无序列表<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>book<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>pen<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>自定义列表<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">dl</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">dt</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="title">dt</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">dd</span>&gt;</span>Black hot drink<span class="tag">&lt;/<span class="title">dd</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">dt</span>&gt;</span>Milk<span class="tag">&lt;/<span class="title">dt</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">dd</span>&gt;</span>White cold drink<span class="tag">&lt;/<span class="title">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dl</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>ul表示包含一组无顺序的列表项内容；ol表示一组有序列表项的内容，若改变列表项的顺序则会改变整体的含义；dl表示包含一组自定义<br>的列表项内容。内部包含1到N个子元素<dt>用于标识自定义的列表项，一个<dt>元素可对应0~N个表示定义列表项描述的<dd>元素。</dd></dt></dt></p>
+<p>可以嵌套（<a href="http://js.jirengu.com/dovajonizi/2/edit" target="_blank" rel="external">DEMO</a>）<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">title</span>&gt;</span>JS Bin<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span>&gt;</span>把大象放进冰箱总共需几步</span><br><span class="line">    <span class="tag">&lt;<span class="title">ol</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">li</span>&gt;</span>把冰箱门打开<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">li</span>&gt;</span>把大象放进冰箱<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">li</span>&gt;</span>把冰箱门关上<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">ol</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">ul</span>&gt;</span>最喜欢的运动</span><br><span class="line">      <span class="tag">&lt;<span class="title">li</span>&gt;</span>篮球<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">li</span>&gt;</span>骑行<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">li</span>&gt;</span>游泳<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">dl</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">dt</span>&gt;</span>经常饮用的饮料<span class="tag">&lt;/<span class="title">dt</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">dd</span>&gt;</span>茶类：红茶、绿茶、乌龙茶<span class="tag">&lt;/<span class="title">dd</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">dd</span>&gt;</span>乳制品：牛奶、酸奶<span class="tag">&lt;/<span class="title">dd</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">dl</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="如何去除列表前面的点或者数字？"><a href="#如何去除列表前面的点或者数字？" class="headerlink" title="如何去除列表前面的点或者数字？"></a>如何去除列表前面的点或者数字？</h4><p>使用list-style: none;来去除</p>
+<h4 id="class-和-id-有什么区别？什么时候用-class-什么时候用-id？"><a href="#class-和-id-有什么区别？什么时候用-class-什么时候用-id？" class="headerlink" title="class 和 id 有什么区别？什么时候用 class 什么时候用 id？"></a>class 和 id 有什么区别？什么时候用 class 什么时候用 id？</h4><p>class称为“类”，在CSS中用小写的”.”点来选择，class在同一个html页面中可以无数次调用相同的class类，具有普遍性；ID表示着标签的<br>身份，在CSS中用”#”来选择，ID在页面中只能出现一次，具有唯一性。class是可重复的，所以尽量在结构内部使用，通常用于样式定义。<br>ID的样式优先级高于class。</p>
+<h4 id="块级元素、行内元素是什么？有什么区别？分别对应哪些常用标签？"><a href="#块级元素、行内元素是什么？有什么区别？分别对应哪些常用标签？" class="headerlink" title="块级元素、行内元素是什么？有什么区别？分别对应哪些常用标签？"></a>块级元素、行内元素是什么？有什么区别？分别对应哪些常用标签？</h4><p>块级元素：显示时独自占据一行（b,td,a,img）<br>行内元素：行内元素会挨个排列，不会出现独占一行的情况。（h1,p,ul,table）</p>
+<h4 id="display-block、display-inline、display-inline-block分别有什么作用"><a href="#display-block、display-inline、display-inline-block分别有什么作用" class="headerlink" title="display: block、display: inline、display: inline-block分别有什么作用"></a>display: block、display: inline、display: inline-block分别有什么作用</h4><p>display: block 元素会显示为块级元素，该元素会独占一行<br>display: inline 元素会显示为行内元素，不会独占一行<br>display: inline-block 元素即不独占一行，又可以设置其宽高属性</p>
+<h4 id="下面代码的作用"><a href="#下面代码的作用" class="headerlink" title="下面代码的作用?"></a>下面代码的作用?</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"header"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"content"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"main"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"aside"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"footer"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>通过三个带id的div明确的划分出页面的结构，该页面分为“头部-内容-底部”布局。同时在内容内部划分两个div来明确主要内容区和<br>边栏区。语义化明显，方便维护与书写代码。</p>
+<h4 id="如何理解-HTML-CSS-语义化"><a href="#如何理解-HTML-CSS-语义化" class="headerlink" title="如何理解 HTML CSS 语义化?"></a>如何理解 HTML CSS 语义化?</h4><p>要机器以及人易于理解代码，方便阅读与维护。</p>
+<h4 id="form表单有什么作用？有哪些常用的input-标签，分别有什么作用？"><a href="#form表单有什么作用？有哪些常用的input-标签，分别有什么作用？" class="headerlink" title="form表单有什么作用？有哪些常用的input 标签，分别有什么作用？"></a>form表单有什么作用？有哪些常用的input 标签，分别有什么作用？</h4><p>form标签用于为用户输入创建HTML表单；<br>文本框：<input type="text" name="XXX"><br>密码框：<input type="password" name="XXX"><br>复选框：<input type="checkbox" name="XXX"><br>单选框：<input type="radio" name="XXX"></p>
+<h4 id="post-和-get-方式的区别？"><a href="#post-和-get-方式的区别？" class="headerlink" title="post 和 get 方式的区别？"></a>post 和 get 方式的区别？</h4><p>GET:从指定的资源请求数据<br>POST:向指定的资源提交要被处理的数据</p>
+<h4 id="在input里，name-有什么作用？"><a href="#在input里，name-有什么作用？" class="headerlink" title="在input里，name 有什么作用？"></a>在input里，name 有什么作用？</h4><p>name属性规定input元素的名称。name属性用于对提交到服务器后的表单数据进行标识，或者在客户端通过JavaScript引用表单数据。<br>只有设置了name属性的表单元素才能在提交表单时传递他们的值。</p>
+<h4 id="提交、提交、-三者有什么区别？"><a href="#提交、提交、-三者有什么区别？" class="headerlink" title="提交、提交、 三者有什么区别？"></a><button>提交</button>、<a class="btn" href="#">提交</a>、<input type="submit" value="提交"> 三者有什么区别？</h4><p>1.<button>定义了一个内容为“提交”的按钮，标签之间的内容可随意定义。<br>2.<a class="btn" href="#">定义了一个a链接，通过样式”btn”来定义。<br>3.<input type="submit" value="提交">通过在form表单中定义提交按钮，向服务器发送表单数据。</a></button></p>
+<h4 id="radio-如何-分组"><a href="#radio-如何-分组" class="headerlink" title="radio 如何 分组?"></a>radio 如何 分组?</h4><p>设置name属性，相同的为一组。</p>
+<h4 id="placeholder-属性有什么作用"><a href="#placeholder-属性有什么作用" class="headerlink" title="placeholder 属性有什么作用?"></a>placeholder 属性有什么作用?</h4><p>placeholder属性提供可描述输入字段预期值的提示信息(hint)。该提示会在输入字段为空时显示，并会在字段获得焦点时消失。</p>
+<h4 id="type-hidden隐藏域有什么作用-举例说明"><a href="#type-hidden隐藏域有什么作用-举例说明" class="headerlink" title="type=hidden隐藏域有什么作用? 举例说明"></a>type=hidden隐藏域有什么作用? 举例说明</h4><p>隐藏域在页面中对用户是不可见的，插入隐藏域的目的在于收集或发送信息，以利于被处理表单的程序所使用。浏览者单击发送按钮发送<br>表单的时候，隐藏域的信息也被一起发送到服务器。</p>
 
           
         
@@ -1036,7 +580,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
