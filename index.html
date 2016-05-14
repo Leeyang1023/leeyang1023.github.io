@@ -431,8 +431,8 @@
             
               
                 
-                <a class="post-title-link" href="/task-8-ask/" itemprop="url">
-                  jrg任务8-CSS选择器
+                <a class="post-title-link" href="/事件捕获与冒泡/" itemprop="url">
+                  事件捕获与冒泡
                 </a>
               
             
@@ -445,8 +445,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-20T13:16:44+08:00" content="2016-04-20">
-              2016-04-20
+            <time itemprop="dateCreated" datetime="2016-05-14T14:57:16+08:00" content="2016-05-14">
+              2016-05-14
             </time>
           </span>
 
@@ -459,8 +459,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/任务代码/" itemprop="url" rel="index">
-                    <span itemprop="name">-任务代码</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">-JavaScript</span>
                   </a>
                 </span>
 
@@ -475,8 +475,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/task-8-ask/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="/task-8-ask/" itemprop="commentsCount"></span>
+                <a href="/事件捕获与冒泡/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="/事件捕获与冒泡/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -499,61 +499,26 @@
       
         
           
-            <ul>
-<li>CSS选择器常见的有几种？</li>
-</ul>
-<ol>
-<li><p>类型（Type）选择器</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">h1 &#123;</span><br><span class="line">  color: #ff0000;</span><br><span class="line">&#125;/*所有类型为h1的元素，字体颜色设置为"#ff0000"*/</span><br></pre></td></tr></table></figure>
+            <h3 id="JS-DOM事件——事件捕获与事件冒泡"><a href="#JS-DOM事件——事件捕获与事件冒泡" class="headerlink" title="JS DOM事件——事件捕获与事件冒泡"></a>JS DOM事件——事件捕获与事件冒泡</h3><ol>
+<li><p>什么是<strong>事件冒泡</strong><br>当一个DOM元素上的事件被触发的时候（如：按钮点击事件），同样的事件将会在那个元素的所有父元素中被触发，从这个事件会从原始元素开始一直传递至DOM树的最上层，这一过程被称为<strong>事件冒泡</strong>。</p>
 </li>
-<li><p>后代（Descendant）选择器<br>当一段HTML被2个以上的选择器包围时，可以用这些选择器的阶层关系，选择到正确的HTML<br><img src="http://ww4.sinaimg.cn/large/bd3d5249jw1f32yi1o4s4j20le08cab5.jpg" alt=""></p>
-</li>
-<li><p>class选择器<br>在CSS中，用.表示class<br><img src="http://ww4.sinaimg.cn/large/bd3d5249jw1f32yk68y07j20le08d3zi.jpg" alt=""></p>
-</li>
-<li><p>ID选择器<br>在CSS中，用#表示ID<br><img src="http://ww1.sinaimg.cn/large/bd3d5249jw1f32ylb9j80j20le08cq43.jpg" alt=""></p>
-</li>
-<li><p>伪类(Pseudo Classes)选择器<br>无法在HTML中看到这些标签，但是会通过滑动鼠标的动作或状态的改变显示出来<br><img src="http://ww1.sinaimg.cn/large/bd3d5249jw1f32yntrekoj20le08c0tz.jpg" alt=""></p>
-</li>
-<li><p>通配符(Universal)选择器<br>使用通配符“<em>”，代表整张网页都要使用\</em>{}里面的设定<br><img src="http://ww3.sinaimg.cn/large/bd3d5249jw1f32yqloj9qj20le08c75d.jpg" alt=""></p>
-</li>
-<li><p>子(Child)选择器<br>与后代选择器的差别：子选择器中间不能插入其他HTML标签，后代选择器则可以<br><img src="http://ww1.sinaimg.cn/large/bd3d5249jw1f32yuvnfeaj20lf08c0to.jpg" alt=""></p>
+<li><p>什么是<strong>事件捕获</strong><br>浏览器获取时间（如：按钮点击时间）是从DOM的最顶层开始的，时间发生后会从DOM的根开始向下传递，直到目标元素，目标时间的所有父元素都会被依次遍历，浏览器获取事件的过程被称为<strong>事件捕获</strong>。</p>
 </li>
 </ol>
-<ul>
-<li>选择器的优先级是怎样的？</li>
-</ul>
+<p><strong>事件捕获</strong>发生在<strong>事件冒泡</strong>之前。<strong>事件捕获</strong>是从上级元素到下级元素，即：从最不精确的对象(document)开始触发，然后到最精确的目标元素的顺序触发。<strong>事件冒泡</strong>是从下级元素到上级元素，即：从最特定的时间目标到最不特定的事件目标(document)的顺序触发。</p>
 <ol>
-<li>important声明</li>
-<li>ID选择器</li>
-<li>类选择器</li>
-<li>伪类选择器</li>
-<li>属性选择器</li>
-<li>标签选择器</li>
-<li>伪类选择器</li>
-<li>通配符选择器</li>
-</ol>
-<ul>
-<li>class和id的使用场景？</li>
-</ul>
+<li><p>浏览器对事件的处理过程<br>在DOM0级事件中，事件处理只有<strong>事件冒泡</strong>的过程，在IE8及其早期版本中支持DOM0级事件。而W3C规范中的DOM2级事件规范中，规定了事件处理分为三个阶段：</p>
 <ol>
-<li>class指定标签的类名，把一些特定样式放到一个class类中，需要此样式的标签，可以在添加此类。</li>
-<li>id指定标签的唯一标识，根据提供的唯一id号，快速获取标签对象。</li>
+<li><strong>事件捕获</strong>阶段</li>
+<li>事件目标阶段</li>
+<li><strong>事件冒泡</strong>阶段<br>在DOM2中添加了一个添加时间处理程序的函数：target.addEventListener(ev, fn, useCapture),通过这个方法你可以通过useCapture参数设置是在<strong>事件捕获</strong>还是在<strong>事件冒泡</strong>阶段处理事件。<br><img src="http://ww4.sinaimg.cn/large/bd3d5249jw1f3uwsx2svdj20f00diwff.jpg" alt=""></li>
 </ol>
-<ul>
-<li><p>使用CSS选择器时为什么要划定适当的命名空间<br>可以使选择器仅匹配特定命名空间下的元素，只对特定的区块生效。</p>
 </li>
-<li><p>以下选择器分别是什么意思？</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#header&#123;</span><br><span class="line">&#125; /*为id属性的值为header的标签设置样式*/</span><br><span class="line">.header&#123;</span><br><span class="line">&#125;/*为class属性的值为header的标签设置样式*/</span><br><span class="line">.header .logo&#123;</span><br><span class="line">&#125;/*为class属性的值为header的元素的所有后代的class属性的值为logo的元素设置样式*/</span><br><span class="line">.header.mobile&#123;</span><br><span class="line">&#125;/*为class属性的值既是header又是mobile的元素设置样式*/</span><br><span class="line">.header p, .header h3&#123;</span><br><span class="line">&#125;/*为class属性的值是header的元素的所有后代的class属性的值是p和h3的元素设置样式*/</span><br><span class="line">#header .nav&gt;li&#123;</span><br><span class="line">&#125;/*为id属性的值是header的元素的所有后代的class属性的值为nav的子元素为li的元素设置样式*/</span><br><span class="line">#header a:hover&#123;</span><br><span class="line">&#125;/*为id属性的值为header的元素的所有后代的a标签元素设置鼠标移入样式*/</span><br></pre></td></tr></table></figure>
+<li><p>不需要冒泡的事件及事件停止冒泡<br>4.1 不需要冒泡的事<br>当时间目标是Document对象之外的对象，如：Window对象时，事件不会冒泡，浏览器会调用对象上相应的事件处理程序响应事件。别外，有些事件，如：blur、focus、load、unload等事件，不会像其他事件一样冒泡，因为这些事件的捕获方式与冒泡时间不一样。</p>
 </li>
-<li><p>列出你知道的伪类选择器<br>:link 用于选取未被访问的链接<br>:visited 用于选取已被访问的链接<br>:hover 用于选择鼠标指针浮动在上面的元素<br>:active 用于激活点击的链接<br>:focus 用于选取获得焦点的元素<br>:first-child 用于选取属于其父元素的首个子元素的指定选择器<br>:before 在被选元素的内容前面插入内容<br>:after 在被选元素的内容后面插入内容</p>
-</li>
-<li><p>:first-child和:first-of-type的作用和区别<br>:first-child 匹配的是某父元素的第一个子元素，可以说是结构上的第一个子元素。<br>:first-of-type 匹配的是某父元素下相同类型子元素中的第一个。</p>
-</li>
-<li><p>text-align: center的作用是什么，作用在什么元素上？能让什么元素水平居中<br>作用是让文本水平居中。作用在块级元素，表格单元格以及通过display拥有块级元素特性或表格特性的行内元素上。</p>
-</li>
-<li><p>如果遇到一个属性想知道兼容性，在哪查看?<br>caniuse.com</p>
-</li>
-</ul>
+</ol>
+<p>4.2 事件停止冒泡与阻止默认时间<br>当事件冒泡到处理程序后，可能需要停止继续冒泡或阻止默认事件。在DOM2中增加了stopPropagation()方法，该方法会阻止时间的继续传播，在IE8及早期版本中可以使用cancelBubble = true来停止冒泡。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(event.stopPropagation) &#123;</span><br><span class="line">     event.stopPropagation();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">window</span>.event.cancelBubble = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在事件发生过程中，有时需要阻止默认事件的发生，使用event对象的defaultPrevented()方法可以阻止默认事件，在IE8及早期版本中可以使用returnValue阻止默认事件。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(event.defaultPrevented) &#123;</span><br><span class="line">     event.defaultPrevented();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">window</span>.event.returnValue = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -616,7 +581,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -624,7 +589,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -633,7 +598,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

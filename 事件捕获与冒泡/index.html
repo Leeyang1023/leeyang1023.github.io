@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="-随笔," />
+  <meta name="keywords" content="-DOM事件," />
 
 
 
@@ -57,29 +57,26 @@
 
 
 
-<meta name="description" content="“生活不止眼前的苟且，还有诗和远方的田野。你赤手空拳来到人世间，为找到那片海不顾一切。”——《生活不止眼前的苟且》
+<meta name="description" content="JS DOM事件——事件捕获与事件冒泡
+什么是事件冒泡当一个DOM元素上的事件被触发的时候（如：按钮点击事件），同样的事件将会在那个元素的所有父元素中被触发，从这个事件会从原始元素开始一直传递至DOM树的最上层，这一过程被称为事件冒泡。
 
-
-伴随着没有鞭炮声的大年夜和无聊的春晚，今年春节的假期也如往年一样平淡的度过。我也回到魔都，开始一年新的“征程”。
-回来上班后趁着调整状态的期间，抓紧就把这个小小的写字的地方搭建起来，完成这个迟迟未完成的“计划”（说到这里我也感觉我也是个拖延症患者w(ﾟДﾟ)w）。在这里要感谢利国">
+什么是事件捕获浏览器获取时间（如：按钮点击时间）是从DOM的最顶层开始的，时间发生后会从DOM的根开始向下传递，直到目标元素，目标时间的所有父元素都会被依次遍历">
 <meta property="og:type" content="article">
-<meta property="og:title" content="你好，2016">
-<meta property="og:url" content="https://leeyang1023.github.io/你好，2016/index.html">
+<meta property="og:title" content="事件捕获与冒泡">
+<meta property="og:url" content="https://leeyang1023.github.io/事件捕获与冒泡/index.html">
 <meta property="og:site_name" content="Leeyang's BLOG">
-<meta property="og:description" content="“生活不止眼前的苟且，还有诗和远方的田野。你赤手空拳来到人世间，为找到那片海不顾一切。”——《生活不止眼前的苟且》
+<meta property="og:description" content="JS DOM事件——事件捕获与事件冒泡
+什么是事件冒泡当一个DOM元素上的事件被触发的时候（如：按钮点击事件），同样的事件将会在那个元素的所有父元素中被触发，从这个事件会从原始元素开始一直传递至DOM树的最上层，这一过程被称为事件冒泡。
 
-
-伴随着没有鞭炮声的大年夜和无聊的春晚，今年春节的假期也如往年一样平淡的度过。我也回到魔都，开始一年新的“征程”。
-回来上班后趁着调整状态的期间，抓紧就把这个小小的写字的地方搭建起来，完成这个迟迟未完成的“计划”（说到这里我也感觉我也是个拖延症患者w(ﾟДﾟ)w）。在这里要感谢利国">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/bd3d5249gw1f11apnu05rj21ao0ylwxr.jpg">
-<meta property="og:updated_time" content="2016-02-16T09:17:16.187Z">
+什么是事件捕获浏览器获取时间（如：按钮点击时间）是从DOM的最顶层开始的，时间发生后会从DOM的根开始向下传递，直到目标元素，目标时间的所有父元素都会被依次遍历">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/bd3d5249jw1f3uwsx2svdj20f00diwff.jpg">
+<meta property="og:updated_time" content="2016-05-14T07:00:08.729Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="你好，2016">
-<meta name="twitter:description" content="“生活不止眼前的苟且，还有诗和远方的田野。你赤手空拳来到人世间，为找到那片海不顾一切。”——《生活不止眼前的苟且》
+<meta name="twitter:title" content="事件捕获与冒泡">
+<meta name="twitter:description" content="JS DOM事件——事件捕获与事件冒泡
+什么是事件冒泡当一个DOM元素上的事件被触发的时候（如：按钮点击事件），同样的事件将会在那个元素的所有父元素中被触发，从这个事件会从原始元素开始一直传递至DOM树的最上层，这一过程被称为事件冒泡。
 
-
-伴随着没有鞭炮声的大年夜和无聊的春晚，今年春节的假期也如往年一样平淡的度过。我也回到魔都，开始一年新的“征程”。
-回来上班后趁着调整状态的期间，抓紧就把这个小小的写字的地方搭建起来，完成这个迟迟未完成的“计划”（说到这里我也感觉我也是个拖延症患者w(ﾟДﾟ)w）。在这里要感谢利国">
+什么是事件捕获浏览器获取时间（如：按钮点击时间）是从DOM的最顶层开始的，时间发生后会从DOM的根开始向下传递，直到目标元素，目标时间的所有父元素都会被依次遍历">
 
 
 
@@ -97,7 +94,7 @@
   };
 </script>
 
-  <title> 你好，2016 | Leeyang's BLOG </title>
+  <title> 事件捕获与冒泡 | Leeyang's BLOG </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -427,7 +424,7 @@
             
             
               
-                你好，2016
+                事件捕获与冒泡
               
             
           </h1>
@@ -439,8 +436,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-16T14:53:25+08:00" content="2016-02-16">
-              2016-02-16
+            <time itemprop="dateCreated" datetime="2016-05-14T14:57:16+08:00" content="2016-05-14">
+              2016-05-14
             </time>
           </span>
 
@@ -453,8 +450,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">-随笔</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">-JavaScript</span>
                   </a>
                 </span>
 
@@ -469,8 +466,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/你好，2016/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="/你好，2016/" itemprop="commentsCount"></span>
+                <a href="/事件捕获与冒泡/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="/事件捕获与冒泡/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -491,15 +488,26 @@
       
 
       
-        <blockquote>
-<p>“生活不止眼前的苟且，还有诗和远方的田野。你赤手空拳来到人世间，为找到那片海不顾一切。”——《生活不止眼前的苟且》</p>
-</blockquote>
-<p><img src="http://ww4.sinaimg.cn/large/bd3d5249gw1f11apnu05rj21ao0ylwxr.jpg" alt=""></p>
-<p>伴随着没有鞭炮声的大年夜和无聊的春晚，今年春节的假期也如往年一样平淡的度过。我也回到魔都，开始一年新的“征程”。</p>
-<p>回来上班后趁着调整状态的期间，抓紧就把这个小小的写字的地方搭建起来，完成这个迟迟未完成的“计划”（说到这里我也感觉我也是个拖延症患者w(ﾟДﾟ)w）。在这里要感谢利国童鞋，在搭建的过程中给予了我很大的支持，改天一定献上一杯关东煮慰劳一下。</p>
-<p>不过今年新年伊始对我来说最大的“福音”就是我的母亲随我来到了魔都，照顾下我的衣食起居（其实还是主要是食啦~，吃了快四年的外卖实在是够了！）。在这里要非常感谢我的老妈，满满的母爱。</p>
-<p>很久之前我就想搞个写字的地方了，但出于“种种原因”（你懂得~）一直没有落实。不过新年新气象，也为了一年有个好的开始，把这个地方搭建起来了。以后尽量定时或者不定时的写点东西，有技术上方面的也有随笔，看心情写吧。积少成多，水滴石穿。只为让自己养成一个好习惯，也让以后回想起来有个回忆的地方吧。就像女生自拍一样，希望能回首一下往昔时光。而不喜拍照的我，就用这些平淡无奇的文字来记录我经历过的岁月吧。</p>
-<p>先写这么多吧，主要是想先熟悉下<em>Markdown</em>的语法，来日方长呢是吧。最后祝愿我的家人朋友能够在新的一年中健康、平安的度过。</p>
+        <h3 id="JS-DOM事件——事件捕获与事件冒泡"><a href="#JS-DOM事件——事件捕获与事件冒泡" class="headerlink" title="JS DOM事件——事件捕获与事件冒泡"></a>JS DOM事件——事件捕获与事件冒泡</h3><ol>
+<li><p>什么是<strong>事件冒泡</strong><br>当一个DOM元素上的事件被触发的时候（如：按钮点击事件），同样的事件将会在那个元素的所有父元素中被触发，从这个事件会从原始元素开始一直传递至DOM树的最上层，这一过程被称为<strong>事件冒泡</strong>。</p>
+</li>
+<li><p>什么是<strong>事件捕获</strong><br>浏览器获取时间（如：按钮点击时间）是从DOM的最顶层开始的，时间发生后会从DOM的根开始向下传递，直到目标元素，目标时间的所有父元素都会被依次遍历，浏览器获取事件的过程被称为<strong>事件捕获</strong>。</p>
+</li>
+</ol>
+<p><strong>事件捕获</strong>发生在<strong>事件冒泡</strong>之前。<strong>事件捕获</strong>是从上级元素到下级元素，即：从最不精确的对象(document)开始触发，然后到最精确的目标元素的顺序触发。<strong>事件冒泡</strong>是从下级元素到上级元素，即：从最特定的时间目标到最不特定的事件目标(document)的顺序触发。</p>
+<ol>
+<li><p>浏览器对事件的处理过程<br>在DOM0级事件中，事件处理只有<strong>事件冒泡</strong>的过程，在IE8及其早期版本中支持DOM0级事件。而W3C规范中的DOM2级事件规范中，规定了事件处理分为三个阶段：</p>
+<ol>
+<li><strong>事件捕获</strong>阶段</li>
+<li>事件目标阶段</li>
+<li><strong>事件冒泡</strong>阶段<br>在DOM2中添加了一个添加时间处理程序的函数：target.addEventListener(ev, fn, useCapture),通过这个方法你可以通过useCapture参数设置是在<strong>事件捕获</strong>还是在<strong>事件冒泡</strong>阶段处理事件。<br><img src="http://ww4.sinaimg.cn/large/bd3d5249jw1f3uwsx2svdj20f00diwff.jpg" alt=""></li>
+</ol>
+</li>
+<li><p>不需要冒泡的事件及事件停止冒泡<br>4.1 不需要冒泡的事<br>当时间目标是Document对象之外的对象，如：Window对象时，事件不会冒泡，浏览器会调用对象上相应的事件处理程序响应事件。别外，有些事件，如：blur、focus、load、unload等事件，不会像其他事件一样冒泡，因为这些事件的捕获方式与冒泡时间不一样。</p>
+</li>
+</ol>
+<p>4.2 事件停止冒泡与阻止默认时间<br>当事件冒泡到处理程序后，可能需要停止继续冒泡或阻止默认事件。在DOM2中增加了stopPropagation()方法，该方法会阻止时间的继续传播，在IE8及早期版本中可以使用cancelBubble = true来停止冒泡。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(event.stopPropagation) &#123;</span><br><span class="line">     event.stopPropagation();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">window</span>.event.cancelBubble = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在事件发生过程中，有时需要阻止默认事件的发生，使用event对象的defaultPrevented()方法可以阻止默认事件，在IE8及早期版本中可以使用returnValue阻止默认事件。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(event.defaultPrevented) &#123;</span><br><span class="line">     event.defaultPrevented();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">window</span>.event.returnValue = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -508,7 +516,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/随笔/" rel="tag">#-随笔</a>
+            <a href="/tags/DOM事件/" rel="tag">#-DOM事件</a>
           
         </div>
       
@@ -517,13 +525,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/task-8-ask/" rel="next" title="jrg任务8-CSS选择器">
+                <i class="fa fa-chevron-left"></i> jrg任务8-CSS选择器
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/饥人谷第五课作业代码展示/" rel="prev" title="饥人谷第五课作业代码展示">
-                饥人谷第五课作业代码展示 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -575,8 +583,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="/你好，2016/"
-           data-title="你好，2016" data-url="https://leeyang1023.github.io//你好，2016/">
+      <div class="ds-thread" data-thread-key="/事件捕获与冒泡/"
+           data-title="事件捕获与冒泡" data-url="https://leeyang1023.github.io//事件捕获与冒泡/">
       </div>
     
   </div>
@@ -708,7 +716,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JS-DOM事件——事件捕获与事件冒泡"><span class="nav-number">1.</span> <span class="nav-text">JS DOM事件——事件捕获与事件冒泡</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
